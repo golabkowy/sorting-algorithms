@@ -4,7 +4,7 @@ var arrayToSort = [38, 27, 43, 3, 9, 82, 10];
 
 // FULL READABLE VERSION
 function merge_sort(array) {
-    //warunek zatrzymania jesli dojdziemy do romzmiaru 1 w rekurencji
+    //recursion stop condition
     if (array.length <= 1) {
         return array
     }
@@ -30,7 +30,6 @@ function merge_sort(array) {
 function merge(left, right) {
     var result = [];
     while (left.length > 0 && right.length > 0) {
-        //sprobowac pop i shift
         var firstLeft = left.shift()
         var firstRight = right.shift()
         if (firstLeft <= firstRight) {
@@ -42,7 +41,7 @@ function merge(left, right) {
         }
     }
 
-    //case if elements left elements
+    //case if elements left
     while (left.length > 0) {
         result.push(left.shift())
     }
